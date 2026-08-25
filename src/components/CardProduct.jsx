@@ -5,6 +5,10 @@ function CardProduct({ product, addToCart, cart }) {
 
   return (
     <div className="card">
+      <div className="wrapper-img">
+        <img className="img-card" src={product.img} alt={product.title} />
+      </div>
+
       <h2>{product.title}</h2>
 
       <div className="card-body">
