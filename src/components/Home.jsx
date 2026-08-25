@@ -1,11 +1,12 @@
 import "../css/home.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { products } from "../data/products";
 import Header from "./Header";
 import Categories from "./Categories";
 import CardProduct from "./CardProduct";
 import Cart from "./Cart";
 import Footer from "../components/Footer";
-import { products } from "../data/products";
+import BtnUp from "./BtnUp";
 
 function Home() {
   const [selectCategory, setSelectCategory] = useState(null);
@@ -126,6 +127,8 @@ function Home() {
               </select>
             </div>
           </div>
+
+          <BtnUp />
 
           {getProducts.length === 0 ? (
             <p className="no-found">No found...</p>
