@@ -39,7 +39,7 @@ export const products = {
     },
     {
       id: 6,
-      title: "Xiaomi",
+      title: "Xiaomi Redmi 15",
       img: "./img/xiaomiPhone.png",
       price: 9990,
       quantity: 1,
@@ -85,8 +85,8 @@ export const products = {
     },
     {
       id: 12,
-      title: "Xiaomi Redmi 15",
-      img: "./img/xiaomiPhone.png",
+      title: "Xiaomi REDMI Watch 6",
+      img: "./img/xiaomiWatch.png",
       price: 3800,
       quantity: 1,
     },
