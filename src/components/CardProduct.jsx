@@ -1,0 +1,30 @@
+import "../css/cardproduct.css";
+
+function CardProduct({ product, addToCart, cart }) {
+  const inCart = cart.find((p) => p.id === product.id);
+
+  return (
+    <div className="card">
+      <h2>{product.title}</h2>
+
+      <div className="card-body">
+        <span>
+          {product.price.toLocaleString("cs-CZ", {
+            style: "currency",
+            currency: "CZK",
+            minimumFractionDigits: 0,
+          })}
+        </span>
+        <span>{product.quantity}</span>
+      </div>
+      <button
+        onClick={() => addToCart(product)}
+        className={`btn-addCart ${inCart ? "active" : ""}`}
+      >
+        Add to cart
+      </button>
+    </div>
+  );
+}
+
+export default CardProduct;
