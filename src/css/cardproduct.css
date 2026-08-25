@@ -14,10 +14,14 @@
   height: 140px;
 }
 
-.img-card {
+.card-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.card-title {
+  font-size: 16px;
 }
 
 .card-body {
