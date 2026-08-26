@@ -1,6 +1,7 @@
 import "../css/cart.css";
 import { useOpenCart } from "../context/OpenCartContext";
 import { IoMdCloseCircle } from "react-icons/io";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 function Cart({ cart, deleteCart, totalQuantity }) {
   const totalPrice = cart.reduce((prev, p) => (prev + p.price) * p.quantity, 0);
@@ -27,7 +28,11 @@ function Cart({ cart, deleteCart, totalQuantity }) {
           <div className="cart">
             {cart.map((p) => (
               <div key={p.id} className="wrapper-card-cart">
-                <h3>{p.title}</h3>
+                <div className="wrapper-img-card-cart">
+                  <img src={p.img} alt={p.title} />
+                </div>
+
+                <h3 className="title-card-cart">{p.title}</h3>
 
                 <span className="price-card-cart">
                   {p.price.toLocaleString("cs-CZ", {
@@ -40,7 +45,7 @@ function Cart({ cart, deleteCart, totalQuantity }) {
                   <span>{p.quantity}</span>
                 </div>
                 <button onClick={() => deleteCart(p.id)} className="btn-delete">
-                  X
+                  <RiDeleteBin5Fill className="icon-card-delete"/>
                 </button>
               </div>
             ))}

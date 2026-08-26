@@ -60,6 +60,49 @@
   border-bottom: 1px solid rgb(226, 226, 226);
 }
 
+.wrapper-img-card-cart {
+  max-width: 54px;
+  width: 100%;
+  height: 54px;
+}
+
+.wrapper-img-card-cart img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title-card-cart {
+  color: rgb(46, 9, 80);
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.price-card-cart {
+  color: rgb(152, 55, 55);
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.btn-delete {
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-card-delete {
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.btn-delete:hover .icon-card-delete {
+  color: rgb(206, 14, 14);
+  transform: rotate(15deg);
+}
+
 .empty-cart {
   color: rgb(183, 183, 183);
   text-align: center;
