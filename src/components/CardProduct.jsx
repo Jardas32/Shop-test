@@ -25,7 +25,7 @@ function CardProduct({ product, addToCart, cart }) {
         onClick={() => addToCart(product)}
         className={`btn-addCart ${inCart ? "active" : ""}`}
       >
-        Add to cart
+        {inCart ? "in Cart" : "Add to cart"}
       </button>
     </div>
   );
