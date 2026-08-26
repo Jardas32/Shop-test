@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="wrapper-container">
       <Routes>
-        <Route path="/Shop-test/" element={<Home />} />
-        <Route path="/Shop-test/favorites" element={<Favorites />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>
   );

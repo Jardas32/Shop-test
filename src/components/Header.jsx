@@ -35,7 +35,7 @@ function Header({
       </div>
 
       <div className="wrapper-right-nav">
-        <Link className="link-to-favorites" to="/Shop-test/favorites">
+        <Link className="link-to-favorites" to="/favorites">
           <FaHeart className="icon-link-favorites" />
         </Link>
 

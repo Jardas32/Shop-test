@@ -9,7 +9,7 @@ function Favorites() {
 
   return (
     <div className="wrapper-favorites-page">
-      <Link className="link-to-home" to="/Shop-test/">
+      <Link className="link-to-home" to="/">
         <IoIosHome className="icon-link-home" />
       </Link>
       <h2 className="title-page-favorites">
