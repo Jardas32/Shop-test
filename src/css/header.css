@@ -67,6 +67,20 @@
 .wrapper-right-nav {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.link-to-favorites {
+  text-decoration: none;
+}
+
+.icon-link-favorites {
+  transition: all 0.3s;
+  color: blueviolet;
+}
+
+.icon-link-favorites.active {
+  color: red;
 }
 
 .wrapper-header-cart {

@@ -1,10 +1,20 @@
 import "../css/cardproduct.css";
+import { FaHeart } from "react-icons/fa";
+import { useOpenCart } from "../context/OpenCartContext";
 
-function CardProduct({ product, addToCart, cart }) {
+function CardProduct({ product }) {
+  const { addToFavorites, cart, addToCart } = useOpenCart();
   const inCart = cart.find((p) => p.id === product.id);
 
   return (
     <div className="card">
+      <div className="wrapper-top-card">
+        <FaHeart
+          onClick={() => addToFavorites(product)}
+          className="icon-favorites-add"
+        />
+      </div>
+
       <div className="wrapper-img">
         <img className="card-img" src={product.img} alt={product.title} />
       </div>

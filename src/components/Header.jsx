@@ -1,5 +1,7 @@
 import "../css/header.css";
 import { useOpenCart } from "../context/OpenCartContext";
+import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 function Header({
   searchValue,
@@ -33,6 +35,10 @@ function Header({
       </div>
 
       <div className="wrapper-right-nav">
+        <Link className="link-to-favorites" to="/Shop-test/favorites">
+          <FaHeart className="icon-link-favorites" />
+        </Link>
+
         <div
           ref={btnOpenCartRef}
           onClick={() => setOpenCart(true)}

@@ -7,6 +7,7 @@ import CardProduct from "./CardProduct";
 import Cart from "./Cart";
 import Footer from "../components/Footer";
 import BtnUp from "./BtnUp";
+import { useOpenCart } from "../context/OpenCartContext";
 
 function Home() {
   const [selectCategory, setSelectCategory] = useState(null);
@@ -18,7 +19,8 @@ function Home() {
   ]);
   const [getProducts, setGetProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
+  const { cart, setCart, addToCart } = useOpenCart();
   const totalQuantity = cart.reduce((prev, p) => prev + p.quantity, 0);
 
   useEffect(() => {
@@ -79,19 +81,21 @@ function Home() {
     setSearchValue("");
   }
 
-  function addToCart(product) {
-    const findProduct = cart.find((p) => p.id === product.id);
+  // function addToCart(product) {
+  //   const findProduct = setCart((prev) =>
+  //     prev.some((p) => p.id === product.id)
+  //   );
 
-    if (findProduct) {
-      setCart((prev) => {
-        return prev.map((p) =>
-          p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
-        );
-      });
-    } else {
-      return setCart((prev) => [...prev, product]);
-    }
-  }
+  //   if (findProduct) {
+  //     setCart((prev) => {
+  //       return prev.map((p) =>
+  //         p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
+  //       );
+  //     });
+  //   } else {
+  //     return setCart((prev) => [...prev, product]);
+  //   }
+  // }
 
   function deleteCart(id) {
     setCart((c) => c.filter((p) => p.id !== id));
@@ -140,6 +144,7 @@ function Home() {
                   product={product}
                   addToCart={addToCart}
                   cart={cart}
+                  setCart={setCart}
                 />
               ))}
             </div>
