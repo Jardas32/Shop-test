@@ -41,3 +41,10 @@
 .category-name.active {
   background-color: rgba(0, 0, 0, 0.68);
 }
+
+@media (max-width: 630px) {
+  .wrapper-categories {
+    max-width: 100%;
+    width: 100%;
+  }
+}

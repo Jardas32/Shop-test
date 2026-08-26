@@ -5,9 +5,17 @@ const openCartContext = createContext(null);
 function OpenCartContext({ children }) {
   const [openCart, setOpenCart] = useState(false);
   const cartRef = useRef(null);
+  const btnOpenCartRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      
+      if (
+        btnOpenCartRef.current &&
+        btnOpenCartRef.current.contains(event.target)
+      )
+        return;
+
       if (cartRef.current && !cartRef.current.contains(event.target)) {
         setOpenCart(false);
       }
@@ -22,6 +30,7 @@ function OpenCartContext({ children }) {
     openCart,
     setOpenCart,
     cartRef,
+    btnOpenCartRef,
   };
 
   return (

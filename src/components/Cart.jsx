@@ -1,9 +1,10 @@
 import "../css/cart.css";
 import { useOpenCart } from "../context/OpenCartContext";
+import { IoMdCloseCircle } from "react-icons/io";
 
 function Cart({ cart, deleteCart, totalQuantity }) {
   const totalPrice = cart.reduce((prev, p) => (prev + p.price) * p.quantity, 0);
-  const { openCart, cartRef } = useOpenCart();
+  const { openCart, setOpenCart, cartRef } = useOpenCart();
 
   return (
     <div
@@ -11,8 +12,14 @@ function Cart({ cart, deleteCart, totalQuantity }) {
       className={`wrapper-cart-bg ${openCart ? "active" : ""} `}
     >
       <div className="wrapper-cart-top">
+        <IoMdCloseCircle
+          onClick={() => setOpenCart(false)}
+          className="icon-close-cart"
+        />
+
         <span>Total products: {totalQuantity}</span>
       </div>
+
       <div className="wrapper-cart">
         {cart.length === 0 ? (
           <p className="empty-cart">Yuor cart is empty...</p>

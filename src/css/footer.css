@@ -28,3 +28,11 @@
   text-align: center;
   padding: 30px;
 }
+
+@media (max-width: 600px) {
+  .wrapper-footer-top {
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+  }
+}

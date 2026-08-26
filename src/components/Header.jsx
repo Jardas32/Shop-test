@@ -7,7 +7,7 @@ function Header({
   searchProducts,
   totalQuantity,
 }) {
-  const { setOpenCart } = useOpenCart();
+  const { setOpenCart, btnOpenCartRef } = useOpenCart();
 
   return (
     <div className="wrapper-header">
@@ -34,7 +34,8 @@ function Header({
 
       <div className="wrapper-right-nav">
         <div
-          onClick={() => setOpenCart((prev) => !prev)}
+          ref={btnOpenCartRef}
+          onClick={() => setOpenCart(true)}
           className="wrapper-header-cart"
         >
           <span className="countCart">{totalQuantity}</span>
